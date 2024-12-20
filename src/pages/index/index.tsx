@@ -1,8 +1,10 @@
-import {View} from '@tarojs/components'
-import {AtButton} from 'taro-ui'
+import { View, Image } from "@tarojs/components";
+import { AtButton } from "taro-ui";
 
-import './index.scss'
-import Taro from '@tarojs/taro';
+import Taro from "@tarojs/taro";
+import "./index.scss";
+import headerBg from "../../assets/background.png";
+import GlobalFooter from "../../components/GlobalFooter";
 
 /**
  * 主页
@@ -21,13 +23,14 @@ export default () => {
         circle
         onClick={() => {
           Taro.navigateTo({
-            url: "/pages/user/index",
+            url: "/pages/doQuestion/index",
           });
         }}
       >
         开始测试
       </AtButton>
+      <Image src={headerBg} style={{ width: "100%" }} mode="aspectFill" />
+      <GlobalFooter />
     </View>
   );
 };
-
